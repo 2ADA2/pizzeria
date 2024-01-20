@@ -1,0 +1,108 @@
+{
+  "pizzas": [
+    {
+      "name": "Margherita",
+      "ingredients": ["Tomato Sauce", "Mozzarella Cheese", "Fresh Basil"],
+      "price": 10.99
+    },
+    {
+      "name": "Pepperoni",
+      "ingredients": ["Tomato Sauce", "Mozzarella Cheese", "Pepperoni"],
+      "price": 12.99
+    },
+    {
+      "name": "Vegetarian",
+      "ingredients": ["Tomato Sauce", "Mozzarella Cheese", "Bell Peppers", "Mushrooms", "Onions", "Black Olives"],
+      "price": 11.99
+    },
+    {
+      "name": "BBQ Chicken",
+      "ingredients": ["BBQ Sauce", "Mozzarella Cheese", "Grilled Chicken", "Red Onions", "Cilantro"],
+      "price": 13.99
+    },
+    {
+      "name": "Hawaiian",
+      "ingredients": ["Tomato Sauce", "Mozzarella Cheese", "Ham", "Pineapple"],
+      "price": 14.99
+    },
+    {
+      "name": "Supreme",
+      "ingredients": ["Tomato Sauce", "Mozzarella Cheese", "Pepperoni", "Sausage", "Bell Peppers", "Onions", "Black Olives"],
+      "price": 15.99
+    },
+    {
+      "name": "White Pizza",
+      "ingredients": ["Olive Oil", "Mozzarella Cheese", "Ricotta Cheese", "Garlic", "Spinach"],
+      "price": 13.49
+    },
+    {
+      "name": "Mushroom Lovers",
+      "ingredients": ["Tomato Sauce", "Mozzarella Cheese", "Mushrooms", "Truffle Oil", "Parmesan"],
+      "price": 16.49
+    },
+    {
+      "name": "Meat Lovers",
+      "ingredients": ["Tomato Sauce", "Mozzarella Cheese", "Pepperoni", "Sausage", "Bacon", "Ham"],
+      "price": 17.99
+    }
+
+  ],
+  "popular": [
+      {
+        "url" : "https://img.freepik.com/free-photo/fresh-buffalo-chicken-wings-with-savory-dip-appetizer-generative-ai_188544-8118.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1705449600&semt=ais",
+        "name": "Buffalo Chicken",
+        "ingredients": [
+            "Buffalo Sauce",
+            "Mozzarella Cheese",
+            "Grilled Chicken",
+            "Red Onions",
+            "Blue Cheese"
+        ],
+        "price": 14.79
+      },
+      {
+        "url": "https://www.foodandwine.com/thmb/Wd4lBRZz3X_8qBr69UOu2m7I2iw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-cheese-pizza-FT-RECIPE0422-31a2c938fc2546c9a07b7011658cfd05.jpg",
+        "name": "Classic Cheese",
+        "ingredients": ["Tomato Sauce", "Mozzarella Cheese"],
+        "price": 9.99
+      },
+      {
+        "url": "https://img.freepik.com/premium-photo/pepperoni-pizza-bliss-spicy-pepperoni-delight-cheesy-goodness-capturing-irresistible-slice_971975-3479.jpg",
+        "name": "Pepperoni Delight",
+        "ingredients": ["Tomato Sauce", "Mozzarella Cheese", "Double Pepperoni"],
+        "price": 11.49
+      },
+      {
+        "url": "https://www.sargento.com/assets/Uploads/Recipe/Image/chicken-bacon-ranch.png",
+        "name": "Bacon Ranch",
+        "ingredients": ["Ranch Sauce", "Mozzarella Cheese", "Bacon", "Red Onions", "Chives"],
+        "price": 12.99
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1581636625402-29b2a704ef13?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c29kYXxlbnwwfHwwfHx8MA%3D%3D",
+        "name": "Soda",
+        "type": "Carbonated",
+        "size": "Medium",
+        "price": 2.49
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aWNlZCUyMHRlYXxlbnwwfHwwfHx8MA%3D%3D",
+        "name": "Iced Tea",
+        "type": "Sweetened",
+        "size": "Large",
+        "price": 2.99
+      },
+      {
+        "url": "https://preppykitchen.com/wp-content/uploads/2023/01/Breadsticks-Recipe-Card.jpg",
+        "name": "Garlic Breadsticks",
+        "quantity": 6,
+        "price": 4.99
+      },
+      {
+        "url": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/4/11/0/EI1D01_mozzarella-sticks_s4x3.jpg.rend.hgtvcom.616.462.suffix/1382545262464.jpeg",
+        "name": "Mozzarella Sticks",
+        "quantity": 8,
+        "price": 5.99
+      }
+    ]
+}

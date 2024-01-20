@@ -1,38 +1,169 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap");
+* {
+  margin: 0;
+  padding: 0; }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+body {
+  background-color: #000000; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to left, #d4ad00, #d47f00);
+  color: white;
+  padding: 0 50px; }
+  header h1 {
+    font-size: 64px;
+    cursor: pointer;
+    transition-duration: 100ms; }
+    header h1:hover {
+      text-shadow: 1px 1px 2px #fffb00; }
+  header .avatar {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    cursor: pointer; }
+  header .manage {
+    display: flex; }
+  header .user-info {
+    display: flex;
+    justify-items: space-between;
+    flex-direction: column;
+    margin: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    align-items: center; }
+  header .user-menu {
+    z-index: 1000;
+    position: absolute;
+    color: black;
+    background: white;
+    width: 100px;
+    top: 100px;
+    right: 25px;
+    list-style-type: none;
+    text-align: center; }
+    header .user-menu li {
+      padding: 3px 5px;
+      cursor: pointer; }
+      header .user-menu li:hover {
+        background-color: #d4ad00;
+        color: white; }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
+  background: white;
+  padding: 0 10px; }
+
+.popular {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  background: white; }
+
+.popular-field {
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  max-width: 80%;
+  margin: 10px 10%; }
+  .popular-field .orders-container {
+    overflow: hidden;
+    display: flex;
+    top: 110px;
+    transition-duration: 400ms; }
+
+.arrow {
+  cursor: pointer;
+  font-size: 30px;
+  color: #636363;
+  user-select: none; }
+  .arrow:hover {
+    color: #3b3b3b; }
+  .arrow:active {
+    color: black; }
+
+.left {
+  transform: scale(-1, 1); }
+
+.orders {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 700px; }
+
+.order-container {
+  min-width: 360px;
+  height: 250px;
+  background-color: #dbdbdb;
+  padding: 5px 0;
+  margin: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  align-items: center;
+  font-family: sans-serif; }
+  .order-container img {
+    width: 90%;
+    height: 70%;
+    object-fit: cover; }
+  .order-container .order-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 90%;
+    height: 28%; }
+  .order-container .order-description {
+    font-size: 1.5vw;
+    width: 70%; }
+    .order-container .order-description::first-letter {
+      text-transform: uppercase; }
+  .order-container .order-name {
+    min-width: 300px;
+    text-align: center;
+    position: absolute;
+    margin-top: 60px;
+    color: white;
+    text-shadow: 1px 1px 2px #000; }
+  .order-container .order-price {
+    color: #424242;
+    font-size: 30px;
+    font-family: Roboto; }
 
-.App-link {
-  color: #61dafb;
-}
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 150px;
+  width: 100%;
+  color: white; }
+  footer li {
+    list-style-type: none; }
+  footer .adresses {
+    font-size: 8px; }
+    footer .adresses > h2 {
+      font-size: 24px;
+      margin-bottom: 10px; }
+  footer .info {
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; }
+    footer .info .phone-number {
+      display: inline;
+      margin: 10px;
+      font-size: 10px; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.background {
+  opacity: 0.3;
+  height: 150px;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  background: center/cover no-repeat url("./img/mixed-ingredient-pizza-with-isolated-products-stone.jpg"); }
