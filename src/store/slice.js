@@ -11,7 +11,12 @@ export const manageSlice = createSlice({
     },
     reducers: {
         writeOffMoney:(state, action) => {
-            state.money = state.money - action.payload.price
+            if (state.balance < action.payload.price) {
+                alert('you don`t have money!');
+                return
+            }
+            state.balance = state.balance - action.payload.price;
+            
         }
 
     }

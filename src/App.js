@@ -1,11 +1,18 @@
 import './App.css';
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PopularSection from './components/popular';
+import CreateOrders from './components/orders';
 
 function App() {
   const state = useSelector((state) => state.manageSlice)
   const [menu, setMenu] = useState(false);
+  useEffect(() => {
+    const background = document.getElementById('body-background');
+    background.style.height = document.body.getBoundingClientRect().height + 'px';
+  }, []);
+
+
   return ( <>
     <header>
       <h1>ADA's Pizza</h1>
@@ -22,14 +29,38 @@ function App() {
         </ul>
       </div>
     </header>
+
+    <div id = 'body-background'></div>
+
     <main>
+      <h2 className = 'article'>popular now:</h2>
       <sectoin className = 'popular'>
         <PopularSection/>
       </sectoin>
 
-      <sectoin className= 'orders'>
-
+      <h2 className='article orders-article'>our other dishes:</h2>
+      <sectoin className = 'orders'>
+        <CreateOrders></CreateOrders>
       </sectoin>
+
+      <section className= 'shipping-payment'>
+        <h2>Shipping and payment</h2>
+        <div className = 'container'>
+          <div>
+            <h3>60 MINUTES OR PIZZA FREE</h3>
+            <p>If we fail to deliver any products, except souvenirs and sauces, within 60 minutes, the courier will give you a certificate for a large pizza.</p>
+          </div>
+          <div>
+            <h3>From 15.99$</h3>
+            <p>Minimum delivery amount. Orders for a smaller amount are placed on a pickup basis.</p>
+            <h3>500$</h3>
+            <p>Maximum amount when paying in cash
+              Product images may differ from the products in your order.</p>
+          </div>          
+        </div>
+
+
+      </section>
     </main>
     <footer>
     <div className = 'adresses'>
@@ -57,6 +88,7 @@ function App() {
         <p className = 'email'>artemada2@gmail.com</p>
       </div>
       <div className='background'></div>
+      <div className = 'footer-black'></div>
     </footer>
   </>)
 }

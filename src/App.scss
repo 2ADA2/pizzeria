@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@900&display=swap');
+
+$marginBase:5%;
 
 * {
     margin:0;
@@ -6,45 +9,50 @@
 }
 
 body{
-    background-color: #000000;
+    background: black;
+    color: white;
 }
 
 header{
-    height: 100px;
+    height: 200px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(to left, #d4ad00, #d47f00);
+    align-items: flex-end;
     color:rgb(255, 255, 255);
-    padding: 0 50px;
+    padding: 0 $marginBase;
+    background-color: rgba(0, 0, 0, 0.3);
 
     & h1 {
-        font-size: 64px;
+        font-size: 140px;
         cursor: pointer;
         transition-duration: 100ms;
+        line-height: 120px;
+        margin-bottom: 40px;
 
         &:hover{
-            text-shadow: 1px 1px 2px rgb(255, 251, 0);
+            text-shadow: 2px 2px 2px  rgb(255, 251, 0);
         }
     }
     & .avatar{
-        width: 75px;
-        height: 75px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
         cursor: pointer;
     }
 
     & .manage{
         display: flex;
+        margin:20px 0;
     }
 
     & .user-info{
         display: flex;
-        justify-items: space-between;
+        justify-content: center;
         flex-direction: column;
         margin:10px;
         font-family: 'Roboto', sans-serif;
         font-weight: 100;
+        font-size: 30px;
         align-items: center;
     }
 
@@ -53,9 +61,9 @@ header{
         position: absolute;
         color:black;
         background:white;
-        width:100px;
-        top:100px;
-        right:25px;
+        width:200px;
+        top:200px;
+        right:$marginBase;
         list-style-type: none;
         text-align: center;
 
@@ -72,24 +80,44 @@ header{
 }
 
 main{
-    background:white;
-    padding: 0 10px
+    margin-top:100px;
 }
+
+.article{
+    margin: 0 $marginBase;
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    padding-bottom: 15px;
+    width:75%;
+    display: block;
+    border-bottom: 1px solid white;
+
+    &::first-letter{
+        text-transform: uppercase;
+    }
+}
+
+.orders-article{
+    margin: 50px $marginBase;
+    margin-bottom: 0;
+}
+
 .popular{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 300px;
-    background:white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 0;
 }
 
 .popular-field{
     overflow: hidden;
     position: absolute;
     display: flex;
-    max-width:80%;
-    margin: 10px 10%;
+    max-width:90%;
+    margin: 10px $marginBase;
 
     & .orders-container{
         overflow: hidden;
@@ -98,26 +126,52 @@ main{
         transition-duration: 400ms;
     }
 
+    & .order-container{
+        background-color:#c9c1aa;
+        color: black;       
+
+        &:hover{
+            & img{
+                filter: blur(1px);
+                transform: scale(1.1);
+            }
+        }
+
+        & .image-container{
+            display: block;
+            overflow: hidden;
+            width: 90%;
+            height: 80%;
+            border-radius: 20px;
+        }
+
+        & img{
+            transition-duration: 0.5s;
+            width:100%;
+            height: 100%;
+        }
+    }
+
 }
 
 .arrow{
     cursor: pointer;
-    font-size: 30px;
-    color:#636363;  
+    font-size: 4.5vw;
+    color:#cecece;  
     user-select:none;
     &:hover{
-        color:rgb(59, 59, 59);
+        color:rgb(167, 167, 167);
     }
     &:active{
-        color:black;
+        color:rgb(255, 255, 255);
     }
 }
 .left{
     transform: scale(-1, 1);
 }
 
+
 .orders{
-    background: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -126,20 +180,39 @@ main{
 }
 
 .order-container{
+    cursor: pointer;
     min-width:360px;
+    max-width: 360px;
     height:250px;
     background-color: #dbdbdb;
-    padding: 5px 0;
+    padding: 10px 0;
     margin:10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items:center;
     font-family: sans-serif;
+    border-radius: 20px;
+    
+    &:hover {
+        & img {
+            filter: blur(1px);
+            transform: scale(1.1);
+        }
+    }
 
-    & img{
-        width:90%;
-        height: 70%;
+    & .image-container {
+        display: block;
+        overflow: hidden;
+        width: 90%;
+        height: 80%;
+        border-radius: 20px;
+    }
+
+    & img {
+        transition-duration: 0.5s;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
     }
 
@@ -147,12 +220,12 @@ main{
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        width:90%;
+        width:88%;
         height: 28%;
     }
 
     & .order-description {
-        font-size: 1.5vw;
+        font-size: 14px;
         width:70%;
 
         &::first-letter{
@@ -175,51 +248,307 @@ main{
         font-family: Roboto;
         
     }
+
+    & .bigger-description {
+        font-size: 18px;
+    }
 }
 
-footer{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 150px;
-    width: 100%;
-    color:white;
-
-    & li{
-        list-style-type: none;
-    }
-
-    & .adresses{
-        font-size: 8px;
-
-        & > h2{
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-    }
-
-    & .info{
-        height: 70px;
+.orders{
+    background: rgba(0, 0, 0, 0.3);
+    & .orders-container{
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
+        justify-content: space-between;
+        width:90%;
+        height:100%;
+        margin: 0 $marginBase;
+        
+    }  
 
-        & .phone-number{
-            display: inline;
-            margin: 10px;
-            font-size: 10px;
+    & .orders-container-container{
+        display: flex;
+        height: 95%;
+        justify-content: flex-start;
+
+        & .order-container{
+            height: 100%;
+            max-height: 500px;
+            width: 50%;
+            max-width: 600px;
+            margin-left:0;
+            margin-right:10px;
+            padding-top: 20px;
+            color: black;
+
+            & .order-name{
+                margin-top: 140px;
+                font-size: 40px;
+            }
+
+            & .order-description{
+               font-size: 24px;  
+               height: 100%;
+               display: flex;
+               align-items: flex-end;
+            }
+
+            & .order-info{
+                max-height: 500px;
+            }
+
+            & .order-price{
+                font-size: 48px;
+            }
+
         }
 
+
+    }
+    
+    & .pages{
+        display: flex;
+        justify-content: flex-start;
+        width:100%;
+        height: 50px;
+        margin: 50px 0;
+
+        & .set-page{
+            height: 60px;
+            width: 60px;
+            margin-right: 10px;
+
+            background-color: #6b6877;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            transition-duration: 200ms;
+
+            &:hover{
+                background-color: #827f91;
+            }
+
+            &:active {
+                background-color: #c0bbd6;
+            }
+
+        }
+    
+        & .choosen{
+            background-color: #ffffff;
+            color: black;
+
+            &:hover {
+                background-color: #ffffff;
+            }
+            
+            &:active {
+                background-color: #ffffff;
+            }
+        }
     }
 }
+.shipping-payment{
+    height: 400px;
+    display: flex;
+    margin: 80px $marginBase 0px $marginBase;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & h2{
+        height: 15%;
+    }
+
+    & .container{
+        display: flex;
+        width: 100%;
+        height: 75%;
+        justify-content: space-between;
+
+        & div{
+            max-width: 45%;
+        }
+    }
+
+    & h3{
+        margin: 10px 0;
+    }
+}
+
 
 .background{
     opacity: 0.3;
-    height: 150px;
+    height: 200px;
     width: 100%;
     z-index: -1;
     position: absolute;
     background: center / cover no-repeat url("./img/mixed-ingredient-pizza-with-isolated-products-stone.jpg");
 }
 
+.footer-black{
+    height: 200px;
+    width: 100%;
+    z-index: -2;
+    position: absolute;
+    background-color: black;
+}
+
+#body-background{
+    opacity: 0.4;
+    height: 100%;
+    width: 100%;
+    top:0px;
+    z-index: -3;
+    position: absolute;
+    background: center / cover no-repeat url("./img/pizza-time-tasty-homemade-traditional-pizza-italian-recipe.jpg");
+}
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 200px;
+    width: 100%;
+    color: white;
+
+    & li {
+        list-style-type: none;
+    }
+
+    & .adresses {
+        font-size: 16px;
+
+        &>h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+    }
+
+    & .info {
+        height: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 24px;
+
+        & .phone-number {
+            display: inline;
+            margin: 10px;
+        }
+
+    }
+}
+
+.modal-background{
+    position: fixed;
+    z-index:1000;
+    background-color:#00000079;
+    width:100%;
+    height: 100%;
+    top:0;
+    left:0;
+    
+    & .menu-container {
+        margin:auto;
+        margin-top: 2%;
+        width: 50%;
+        height: 90%;
+        background-color:white;
+        display: flex;
+        color: #464646;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 20px;
+        align-items: center;
+        border-radius: 30px;
+        padding: 10px;
+    }
+
+    & .image-container{
+        width:95%;
+        height:55%;
+        overflow: hidden;
+        border-radius: 10px;
+
+        & img{
+            width:100%;
+            object-fit: cover;
+            height: 100%;
+
+        }        
+    }
+
+    & .close{
+        cursor: pointer;
+
+    }
+
+    & .close-container {
+        display: flex;
+        justify-content: flex-end;
+        width:95%;
+        font-size: 48px;
+        height:5%;   
+        line-height: 48px; 
+    }
+
+    & .button-container{
+        width: 40%;
+        height: 9%;        
+    }
+
+    & button {
+        border: none;
+        width:100%;
+        height:100%;
+        border-radius: 20px;
+        font-size: 28px;
+        font-family: Rubik;
+        color: white;
+        font-weight: 900;
+        background-color:#60568a;
+        cursor: pointer;
+        box-shadow: 0 7px #433574;
+        outline: none;
+        letter-spacing: 1px;
+        transition-duration: 100ms;
+
+        &:hover{
+            margin-top: 1.2px;
+            box-shadow: 0 6px #433574;
+        }
+
+        &:active{
+            margin-top:6px;
+            box-shadow: 0 0 #433574;
+        }
+    }
+
+    & .modal-head{
+        display: flex;
+        width:90%;
+        font-size: 30px;
+        justify-content: center;
+        gap: 50px;
+
+        & h3{
+            font-family: Roboto;
+            font-weight: 900;
+            font-size: 48px;
+        }
+    }
+
+    & .order-description{
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+        max-width: 95%;
+        &::first-letter{
+            text-transform: uppercase;
+        }
+    }
+
+}
