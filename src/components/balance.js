@@ -9,7 +9,7 @@ export const Balance = () => {
     const balance = useSelector((state) => state.manageSlice.balance);
     const increase = () => {
         animateBalance(() => dispatch(addMoney({
-             value: value.toFixed(2)/100,
+             value: Number(value).toFixed(2)/100,
              order:false,
             })));
         dispatch(roundBalance());
@@ -18,11 +18,11 @@ export const Balance = () => {
 
     const writeOff = () => {
         dispatch(roundBalance());        
-        if (value > balance.toFixed(2)){
+        if (Number(value) > balance.toFixed(2)){
             alert('Ошибка!');
         } else{
             animateBalance(() => dispatch(writeOffMoney({ 
-                value: value.toFixed(2) /100,
+                value: Number(value).toFixed(2)/100,
                 order:false,
             })));
             setValue(0);     
@@ -31,18 +31,25 @@ export const Balance = () => {
     }
 
     function handleChange(e){
-        const newValue = e.target.value;
-        if (newValue === '') {
-            setValue('');
-        } else if (!isNaN(parseInt(newValue))){
-            setValue(parseInt(newValue));
-        }
+        const value = e.target.value;
+        setValue(value);
     }
 
     return (
         <div className = 'balance-control'>
             <div>
-                <input className='balance-field' value={value} onChange={(e) => handleChange(e)}></input>
+                <input 
+                className='balance-field' 
+                value={value} 
+                onChange={(e) => handleChange(e)}
+                onFocus={() => setValue('')}
+                onKeyDown={(e) => {
+                    if(e.code == 'Enter'){
+                        increase(e);
+                        e.target.blur();
+                    }
+                }}
+                ></input>
                 <div className = 'control-panel'>
                     <button className="button add" onClick={() => increase()}>add</button>
                     <button className="button subtract" onClick={() => writeOff()}>subtract</button>

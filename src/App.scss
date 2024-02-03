@@ -41,13 +41,16 @@ header{
                 text-shadow: 2px 2px 2px  rgb(255, 251, 0);
             } 
         }
-    margin-bottom: 30px;  
+
+    margin-bottom: 30px; 
+
     }
     & .avatar{
         width: 100px;
         height: 100px;
         border-radius: 50%;
         cursor: pointer;
+        object-fit: cover;
     }
 
     & .manage{
@@ -81,9 +84,8 @@ header{
         overflow: hidden;
 
         & li{
-
             cursor: pointer;
-            
+
             & a {
                 color: black;
                 padding: 3px 5px;                
@@ -95,8 +97,7 @@ header{
             &:hover{
                 background-color: #c9c9c9;
                 color:white;
-            }  
-
+            } 
         }
     }
 }
@@ -174,7 +175,6 @@ main{
             height: 100%;
         }
     }
-
 }
 
 .arrow{
@@ -323,10 +323,7 @@ main{
             & .order-price{
                 font-size: 48px;
             }
-
         }
-
-
     }
     
     & .pages{
@@ -340,7 +337,6 @@ main{
             height: 60px;
             width: 60px;
             margin-right: 10px;
-
             background-color: #6b6877;
             color: white;
             border: none;
@@ -373,6 +369,7 @@ main{
         }
     }
 }
+
 .shipping-payment{
     height: 400px;
     display: flex;
@@ -394,12 +391,10 @@ main{
             max-width: 45%;
         }
     }
-
     & h3{
         margin: 10px 0;
     }
 }
-
 
 .background{
     opacity: 0.3;
@@ -506,7 +501,6 @@ footer {
 
     & .close{
         cursor: pointer;
-
     }
 
     & .close-container {
@@ -538,8 +532,6 @@ footer {
         outline: none;
         letter-spacing: 1px;
         transition-duration: 100ms;
-
-
 
         &:hover{
             margin-top: 1.2px;
@@ -579,9 +571,10 @@ footer {
 
     & .order-description{
         text-align: center;
-        font-size: 20px;
+        font-size: 2vw;
         font-weight: 500;
         max-width: 95%;
+        width:95%;
         &::first-letter{
             text-transform: uppercase;
         }
@@ -647,6 +640,40 @@ footer {
     justify-content: space-between;
     margin-bottom: 40px;   
 
+    & .button-container{
+        max-height: 100px;
+        height: 100px;
+        display: flex;
+        width: 50%;
+        margin-left: $marginBase;
+    }
+
+    & .toOrder {
+        border: none;
+        width: 300px;
+        height: 70px;
+        border-radius: 20px;
+        font-size: 32px;
+        font-family: Rubik;
+        color: white;
+        font-weight: 900;
+        background-color: #60568a;
+        cursor: pointer;
+        box-shadow: 0 7px #433574;
+        outline: none;
+        letter-spacing: 1px;
+        transition-duration: 100ms;
+        letter-spacing: 2px;
+        &:hover {
+            margin-top: 1.2px;
+            box-shadow: 0 6px #433574;
+        }
+        &:active {
+            margin-top: 6px;
+            box-shadow: 0 0 #433574;
+        }
+    }
+
     & .order-header{
         display: flex;
         width:100%;
@@ -692,8 +719,6 @@ footer {
             display:flex;
             flex-direction: column;  
             justify-content: space-between;
-
-
 
             & .order-description{
                 font-size: 2vw;
@@ -757,4 +782,57 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+.profile-container{
+    display: flex;
+    margin: 0 $marginBase;
+    justify-content: space-between;
+    width:90%;
+    font-family: Rubick;
+    font-size: 30px;
+
+    & .control-panel{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap:100px;
+        width:60%;
+    }
+
+    & .input-container{
+        width:100%;
+        height:70%;
+
+        & input{
+            width:50%;
+            height: 50px;
+            font-size: 30px;
+            padding-left: 15px;
+        }
+
+        & textarea{
+            width:100%;
+            height:100%;
+            resize: none;
+        }
+    }
+
+    & .input-name{
+        height: 30%;
+    }
+
+    & .user-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & img{
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50px;
+        }
+    }
+}
+
 

@@ -6,6 +6,7 @@ import {Main} from './components/main';
 import {Footer} from './components/footer';
 import {Balance} from './components/balance';
 import {OrdersPage} from './components/ordersPage';
+import { Profile } from './components/profile';
 
 function App() {
   const state = useSelector((state) => state.manageSlice)
@@ -35,7 +36,7 @@ function App() {
         <Route path="/" element={<Main/>} />
         <Route path="/balance" element={<Balance/>} />
         <Route path="/orders" element={<OrdersPage/>} />
-        <Route path="/profile" element={<h1>profile</h1>} />
+        <Route path="/profile" element={<Profile/>} />
       </Routes>
     </main>
 

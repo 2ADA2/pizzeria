@@ -8,11 +8,11 @@ const orders = allOrders.pizzas
 const CreateOrders = () => {
     const [orderList, setOrderList] = useState(orders.map((order) => {
         return <CreateOrder {...order} />
-    }))
+    }));
     const [page, setPage] = useState(0);
     const [value, setValue] = useState(2);
 
-    async function checkWidth(){
+    function checkWidth(){
         if ((window.innerWidth > 1500) && (value === 2)) setValue(3);
         if ((window.innerWidth < 1500) && (value === 3)) setValue(2);
         if (Math.ceil(orders.length / value) < (page+1)) setPage(0);
@@ -24,13 +24,9 @@ const CreateOrders = () => {
 
     useResize(() => checkWidth())
 
-    
-
     async function changePage(page){
         setPage(page);
     }
-
-
 
     function CreatePages(){
         const pages = [];

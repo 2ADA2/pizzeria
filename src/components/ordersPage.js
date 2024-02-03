@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import {useSelector } from "react-redux";
+import {useSelector, useDispatch} from "react-redux";
+import {order} from '../store/slice';
 import orders from '../orders.json';
 import { CreateOrder } from "./orderInCart";
 
@@ -36,6 +37,8 @@ export const OrdersPage = () => {
     let total = {}
     const [sum, setSum] = useState(0);
 
+    const dispatch = useDispatch();
+    const balance = useSelector(state => state.manageSlice.balance);
 
     const setTotal = (name, value) => {
         total[name] = Number(value).toFixed(2);
@@ -48,6 +51,15 @@ export const OrdersPage = () => {
             sum += Number(total[elem]);
         }
         setSum(Number(sum).toFixed(2));
+    }
+
+    function toOrder(){
+        if (balance > sum) {
+            console.log(1);
+            dispatch(order({price:sum}));
+            total = {}
+        }
+        
     }
 
     if (!orders.length) {
@@ -67,8 +79,13 @@ export const OrdersPage = () => {
 
                 return <CreateOrder order={order} setTotal = {(name, value) => setTotal(name, value)}/>
         })   
-       }
-            <div className = 'total'>total: {sum}$</div>         
+       }    
+            <div className = 'total'>total: {sum}$</div>
+
+            <div className = 'button-container'>
+                <button className = 'toOrder' onClick = {() => toOrder()}>Order!</button>      
+            </div>
+            
         </div>
     )
 }
