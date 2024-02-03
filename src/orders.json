@@ -1,6 +1,6 @@
 {
   "pizzas": [
-    {
+        {
       "url": "https://images.ctfassets.net/nw5k25xfqsik/64VwvKFqxMWQORE10Tn8pY/200c0538099dc4d1cf62fd07ce59c2af/20220211142754-margherita-9920.jpg",
       "name": "Margherita",
       "ingredients": ["Tomato Sauce", "Mozzarella Cheese", "Fresh Basil"],
@@ -101,7 +101,7 @@
   ],
   "popular": [
       {
-        "url" : "https://img.freepik.com/free-photo/fresh-buffalo-chicken-wings-with-savory-dip-appetizer-generative-ai_188544-8118.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1705449600&semt=ais",
+        "url" : "https://www.sweetashoney.co/wp-content/uploads/Buffalo-Chicken-Pizza-3.jpg",
         "name": "Buffalo Chicken",
         "ingredients": [
             "Buffalo Sauce",

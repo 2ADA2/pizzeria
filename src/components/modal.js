@@ -1,24 +1,31 @@
 import React, {useState} from 'react';
-import { useDispatch } from 'react-redux';
-import {writeOffMoney} from "../store/slice";
+import { useDispatch, useSelector } from 'react-redux';
+import { setCart } from "../store/slice";
 
 export const CreateModal = (props) => {
-    const [hidden, setHidden] = useState(1);
+    const [added, setAdded] = useState((useSelector(state => state.manageSlice.inCart)).indexOf(props.name) +1)
+    const [hidden, setHidden] = useState(true);
     const dispatch = useDispatch();
-    const addTask = () => dispatch(writeOffMoney({price: props.price}));
+    const addTask = () => {
+        dispatch(setCart({name : props.name}));
+        setAdded(!added);
+    }
     if (hidden){ 
     return (
     <div className = 'modal-background'>
         <div className = "menu-container">
             <div className = 'close-container'>
-                <h2 onClick = {() => {setHidden(0); props.setModal()}} className = 'close'>&times;</h2>
+                <h2 onClick = {() => {setHidden(false); props.setModal()}} className = 'close'>&times;</h2>
             </div>
             
             <div className='image-container'>
                 <img src={props.url}></img>
             </div>
             <div className = 'button-container'>
-                <button className = 'toOrder' onClick = {() => addTask()}>Order!</button>
+                <button 
+                className={(added) ? 'added' : ''}
+                onClick = {() => addTask()}
+                >{(added) ? 'remove from cart' : 'add to cart'}</button>
             </div>
             
             <div className = 'modal-head'>

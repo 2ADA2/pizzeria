@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 
 $marginBase:5%;
+
+a {
+    text-decoration:none;
+    color: black;
+}
 
 * {
     margin:0;
@@ -23,15 +28,20 @@ header{
     background-color: rgba(0, 0, 0, 0.3);
 
     & h1 {
-        font-size: 140px;
-        cursor: pointer;
-        transition-duration: 100ms;
-        line-height: 120px;
-        margin-bottom: 40px;
+        & a{
+            color: white;
+            text-decoration: none;
+            font-size: 140px;
+            cursor: pointer;
+            transition-duration: 100ms;
+            line-height: 120px;
+            
 
-        &:hover{
-            text-shadow: 2px 2px 2px  rgb(255, 251, 0);
+            &:hover{
+                text-shadow: 2px 2px 2px  rgb(255, 251, 0);
+            } 
         }
+    margin-bottom: 30px;  
     }
     & .avatar{
         width: 100px;
@@ -66,21 +76,34 @@ header{
         right:$marginBase;
         list-style-type: none;
         text-align: center;
+        border-radius: 0  0 10px 10px;
+        opacity: 0.8;
+        overflow: hidden;
 
         & li{
-            padding: 3px 5px;
-            cursor: pointer;
 
-            &:hover{
-                background-color: #d4ad00;
-                color:white;
+            cursor: pointer;
+            
+            & a {
+                color: black;
+                padding: 3px 5px;                
+                width: 100%;
+                height: 100%;
+                display: block;
+              
             }
+            &:hover{
+                background-color: #c9c9c9;
+                color:white;
+            }  
+
         }
     }
 }
 
 main{
     margin-top:100px;
+    min-height: 500px;
 }
 
 .article{
@@ -401,8 +424,8 @@ main{
     width: 100%;
     top:0px;
     z-index: -3;
-    position: absolute;
-    background: center / cover no-repeat url("./img/pizza-time-tasty-homemade-traditional-pizza-italian-recipe.jpg");
+    position: fixed;
+    background: 0px bottom / cover no-repeat url("./img/pizza-time-tasty-homemade-traditional-pizza-italian-recipe.jpg");
 }
 footer {
     display: flex;
@@ -516,6 +539,8 @@ footer {
         letter-spacing: 1px;
         transition-duration: 100ms;
 
+
+
         &:hover{
             margin-top: 1.2px;
             box-shadow: 0 6px #433574;
@@ -524,6 +549,17 @@ footer {
         &:active{
             margin-top:6px;
             box-shadow: 0 0 #433574;
+        }
+    }
+
+    & .added{
+        background-color: #ff8888;
+        box-shadow: 0 7px #743535;
+        &:hover{
+            box-shadow: 0 6px #743535;
+        }
+        &:active{
+            box-shadow: 0 0px #743535;
         }
     }
 
@@ -552,3 +588,173 @@ footer {
     }
 
 }
+
+.balance-control {
+    display: flex;
+    font-size:42px;
+    width:90%;
+    margin: 0 $marginBase;
+    justify-content: space-around;
+    font-family: Rubik;
+
+    & > div{
+        width:40%;
+
+        & input{
+            box-sizing: border-box;
+            height:50px;
+            max-width:100%;
+            width:100%;
+            font-size: 30px;   
+            font-family: Rubik;
+
+        }
+
+        & button{
+            width:30%;
+            min-height: 50px;
+            cursor: pointer;
+            font-family: Rubik;
+        }
+    }
+}
+
+.control-panel{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.empty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height: 100%;
+    opacity: 0.5;
+    font-size:10vw;
+    font-family: Rubic;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+.orderPage{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 40px;   
+
+    & .order-header{
+        display: flex;
+        width:100%;
+        height:60px;
+
+        & .order-name{
+            width: 100%;
+            height: 100%;
+            font-size: 4vw;
+            text-align: center;
+        }
+
+        & .cross{
+            width:10%;
+            height: 60px;
+            line-height: 60px;
+            color:#353535;
+            font-size: 60px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+     & .order{
+        max-width:100%;
+        height:400px;
+        display: flex;
+        gap:40px;
+        padding: 10px $marginBase;
+        background-color: rgba(255, 255, 255, 0.514);
+        color: black;  
+
+        & img{
+            width:40%;
+            height: 100%;
+            object-fit: cover;
+        }         
+        
+        & .order-info{
+            width: 50%;
+            display:flex;
+            flex-direction: column;  
+            justify-content: space-between;
+
+
+
+            & .order-description{
+                font-size: 2vw;
+                &::first-letter{
+                    text-transform: uppercase;
+                }
+            }     
+            
+            & .balance-control{
+                height:40%;
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+                padding-bottom: 5%;
+                font-family: Roboto;
+                margin: 0;
+            }
+
+            * .order-price{
+                max-width:30%;
+                width:30%;
+            }
+
+            & .counter{
+                display: flex;
+                min-width: 200px;
+
+                & input{
+                    width:70px;
+                    text-align: center;
+                    height:50px;
+                    border: none;
+                    border-left: 1px solid #000;
+                    border-right: 1px solid #000;
+                }
+                & button{
+                    width:50px;
+                    height:40px;
+                    border: none;
+                }
+            }
+        }      
+    }
+}
+
+.total{
+    position: fixed;
+    right:22.5%;
+    top:0;
+    width:15%;
+    height: 120px;
+    border-radius: 0 0 10px 10px;
+    background:white;
+    font-size: 40px;
+    color:black;
+    opacity: 0.5;
+    text-align: center;
+    font-family: Rubik;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
