@@ -12,6 +12,9 @@ body {
   background: black;
   color: white; }
 
+img {
+  border-radius: 10px; }
+
 header {
   height: 200px;
   display: flex;
@@ -21,11 +24,12 @@ header {
   padding: 0 5%;
   background-color: rgba(0, 0, 0, 0.3); }
   header h1 {
+    min-width: 350px;
     margin-bottom: 30px; }
     header h1 a {
       color: white;
       text-decoration: none;
-      font-size: 140px;
+      font-size: 10vw;
       cursor: pointer;
       transition-duration: 100ms;
       line-height: 120px; }
@@ -152,8 +156,8 @@ main {
 
 .order-container {
   cursor: pointer;
-  min-width: 360px;
-  max-width: 360px;
+  min-width: 450px;
+  max-width: 450px;
   height: 250px;
   background-color: #dbdbdb;
   padding: 10px 0;
@@ -355,7 +359,8 @@ footer {
     gap: 20px;
     align-items: center;
     border-radius: 30px;
-    padding: 10px; }
+    padding: 10px;
+    min-width: 450px; }
   .modal-background .image-container {
     width: 95%;
     height: 55%;
@@ -366,17 +371,22 @@ footer {
       object-fit: cover;
       height: 100%; }
   .modal-background .close {
-    cursor: pointer; }
+    cursor: pointer;
+    min-height: 50px; }
   .modal-background .close-container {
     display: flex;
     justify-content: flex-end;
     width: 95%;
     font-size: 48px;
     height: 5%;
+    min-height: 50px;
     line-height: 48px; }
+  .modal-background .order-name {
+    font-size: 42px; }
   .modal-background .button-container {
     width: 40%;
-    height: 9%; }
+    height: 9%;
+    min-width: 280px; }
   .modal-background button {
     border: none;
     width: 100%;
@@ -391,7 +401,8 @@ footer {
     box-shadow: 0 7px #433574;
     outline: none;
     letter-spacing: 1px;
-    transition-duration: 100ms; }
+    transition-duration: 100ms;
+    min-height: 60px; }
     .modal-background button:hover {
       margin-top: 1.2px;
       box-shadow: 0 6px #433574; }
@@ -400,7 +411,9 @@ footer {
       box-shadow: 0 0 #433574; }
   .modal-background .added {
     background-color: #ff8888;
-    box-shadow: 0 7px #743535; }
+    box-shadow: 0 7px #743535;
+    min-width: 280px;
+    min-height: 60px; }
     .modal-background .added:hover {
       box-shadow: 0 6px #743535; }
     .modal-background .added:active {
@@ -417,7 +430,7 @@ footer {
       font-size: 48px; }
   .modal-background .order-description {
     text-align: center;
-    font-size: 2vw;
+    font-size: 24px;
     font-weight: 500;
     max-width: 95%;
     width: 95%; }
@@ -442,7 +455,6 @@ footer {
       font-family: Rubik; }
     .balance-control > div button {
       width: 30%;
-      min-height: 50px;
       cursor: pointer;
       font-family: Rubik; }
 
@@ -450,6 +462,8 @@ footer {
   display: flex;
   justify-content: space-between;
   margin-top: 5px; }
+  .control-panel button {
+    min-height: 50px; }
 
 .empty {
   display: flex;
@@ -501,7 +515,7 @@ footer {
   .orderPage .order-header {
     display: flex;
     width: 100%;
-    height: 60px; }
+    height: 100px; }
     .orderPage .order-header .order-name {
       width: 100%;
       height: 100%;
@@ -516,7 +530,8 @@ footer {
       cursor: pointer;
       display: flex;
       align-items: center;
-      justify-content: center; }
+      justify-content: center;
+      user-select: none; }
   .orderPage .order {
     max-width: 100%;
     height: 400px;
@@ -533,9 +548,11 @@ footer {
       width: 50%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between; }
+      justify-content: space-between;
+      gap: 30px; }
       .orderPage .order .order-info .order-description {
-        font-size: 2vw; }
+        font-size: 1.5vw;
+        min-height: 100px; }
         .orderPage .order .order-info .order-description::first-letter {
           text-transform: uppercase; }
       .orderPage .order .order-info .balance-control {
@@ -551,7 +568,9 @@ footer {
         width: 30%; }
       .orderPage .order .order-info .counter {
         display: flex;
-        min-width: 200px; }
+        min-width: 200px;
+        max-width: 200px;
+        width: 200px; }
         .orderPage .order .order-info .counter input {
           width: 70px;
           text-align: center;
@@ -560,8 +579,9 @@ footer {
           border-left: 1px solid #000;
           border-right: 1px solid #000; }
         .orderPage .order .order-info .counter button {
+          min-width: 50px;
           width: 50px;
-          height: 40px;
+          height: 50px;
           border: none; }
 
 .total {

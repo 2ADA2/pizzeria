@@ -29,7 +29,7 @@ export const CreateModal = (props) => {
             </div>
             
             <div className = 'modal-head'>
-                <h2 className = 'prder-name'>{props.name}</h2>
+                <h2 className = 'order-name'>{props.name}</h2>
                 <h3 className = 'order-price'>{props.price}$</h3>
             </div>
             

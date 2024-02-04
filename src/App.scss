@@ -18,6 +18,10 @@ body{
     color: white;
 }
 
+img{
+    border-radius: 10px;
+}
+
 header{
     height: 200px;
     display: flex;
@@ -28,15 +32,15 @@ header{
     background-color: rgba(0, 0, 0, 0.3);
 
     & h1 {
+        min-width:350px;
         & a{
             color: white;
             text-decoration: none;
-            font-size: 140px;
+            font-size: 10vw;
             cursor: pointer;
             transition-duration: 100ms;
             line-height: 120px;
             
-
             &:hover{
                 text-shadow: 2px 2px 2px  rgb(255, 251, 0);
             } 
@@ -204,8 +208,8 @@ main{
 
 .order-container{
     cursor: pointer;
-    min-width:360px;
-    max-width: 360px;
+    min-width:450px;
+    max-width: 450px;
     height:250px;
     background-color: #dbdbdb;
     padding: 10px 0;
@@ -483,6 +487,8 @@ footer {
         align-items: center;
         border-radius: 30px;
         padding: 10px;
+        min-width:450px;
+        
     }
 
     & .image-container{
@@ -501,6 +507,7 @@ footer {
 
     & .close{
         cursor: pointer;
+        min-height:50px;
     }
 
     & .close-container {
@@ -509,12 +516,18 @@ footer {
         width:95%;
         font-size: 48px;
         height:5%;   
+        min-height: 50px;
         line-height: 48px; 
+    }
+
+    & .order-name {
+        font-size: 42px;
     }
 
     & .button-container{
         width: 40%;
-        height: 9%;        
+        height: 9%;     
+        min-width: 280px; 
     }
 
     & button {
@@ -532,6 +545,7 @@ footer {
         outline: none;
         letter-spacing: 1px;
         transition-duration: 100ms;
+        min-height: 60px;
 
         &:hover{
             margin-top: 1.2px;
@@ -547,6 +561,8 @@ footer {
     & .added{
         background-color: #ff8888;
         box-shadow: 0 7px #743535;
+        min-width: 280px;
+        min-height: 60px;
         &:hover{
             box-shadow: 0 6px #743535;
         }
@@ -571,7 +587,7 @@ footer {
 
     & .order-description{
         text-align: center;
-        font-size: 2vw;
+        font-size: 24px;
         font-weight: 500;
         max-width: 95%;
         width:95%;
@@ -605,7 +621,6 @@ footer {
 
         & button{
             width:30%;
-            min-height: 50px;
             cursor: pointer;
             font-family: Rubik;
         }
@@ -616,6 +631,11 @@ footer {
     display: flex;
     justify-content: space-between;
     margin-top: 5px;
+
+    & button{
+        min-height: 50px;
+
+    }
 }
 
 .empty{
@@ -677,7 +697,7 @@ footer {
     & .order-header{
         display: flex;
         width:100%;
-        height:60px;
+        height:100px;
 
         & .order-name{
             width: 100%;
@@ -696,6 +716,7 @@ footer {
             display: flex;
             align-items: center;
             justify-content: center;
+            user-select: none;
         }
     }
 
@@ -719,9 +740,11 @@ footer {
             display:flex;
             flex-direction: column;  
             justify-content: space-between;
+            gap:30px;
 
             & .order-description{
-                font-size: 2vw;
+                font-size: 1.5vw;
+                min-height:100px;
                 &::first-letter{
                     text-transform: uppercase;
                 }
@@ -745,6 +768,8 @@ footer {
             & .counter{
                 display: flex;
                 min-width: 200px;
+                max-width: 200px;
+                width: 200px;
 
                 & input{
                     width:70px;
@@ -755,14 +780,17 @@ footer {
                     border-right: 1px solid #000;
                 }
                 & button{
+                    min-width: 50px;
                     width:50px;
-                    height:40px;
+                    height:50px;
                     border: none;
                 }
             }
         }      
     }
 }
+
+
 
 .total{
     position: fixed;

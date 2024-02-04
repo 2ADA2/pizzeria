@@ -8,8 +8,11 @@ export const Profile = () => {
     const [link, setLink] = useState(state.avatarLink);
     const dispatch = useDispatch();
 
-    function handleInput(value, set){
-        console.log(value);
+    function handleInput(value, set, limit = false){
+        if((value.length > 15) || (value.length < 3)) {
+            alert('Ошибка! Ник должен содержать меньше 15 и больше 2 символов!');
+            return;
+        }
         dispatch(set({value:value}))
     }
 
@@ -22,10 +25,10 @@ export const Profile = () => {
                     className = 'change-name' 
                     value = {userName}
                     onChange = {(e) => setUserName(e.target.value)}
-                    onBlur={() => handleInput(userName, setName)}
+                    onBlur={() => handleInput(userName, setName, true)}
                     onKeyDown={(e) => {
                         if (e.code == 'Enter'){
-                            handleInput(userName, setName);
+                            handleInput(userName, setName, true);
                             e.target.blur();
                         }
                     }}

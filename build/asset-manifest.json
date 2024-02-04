@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.8ef356fb.css",
-    "main.js": "/static/js/main.bedff053.js",
-    "static/media/pizza-time-tasty-homemade-traditional-pizza-italian-recipe.jpg": "/static/media/pizza-time-tasty-homemade-traditional-pizza-italian-recipe.88c9c4fd013ba3fb9788.jpg",
-    "static/media/mixed-ingredient-pizza-with-isolated-products-stone.jpg": "/static/media/mixed-ingredient-pizza-with-isolated-products-stone.b031df3580547af479f7.jpg",
+    "main.css": "/static/css/main.2401f579.css",
+    "main.js": "/static/js/main.fa78b68b.js",
+    "static/media/pizza-time-tasty-homemade-traditional-pizza-italian-recipe.jpg": "/static/media/pizza-time-tasty-homemade-traditional-pizza-italian-recipe.6597f0061e3b44283c8c.jpg",
+    "static/media/mixed-ingredient-pizza-with-isolated-products-stone.jpg": "/static/media/mixed-ingredient-pizza-with-isolated-products-stone.d4b83c8a0e9c369c3ba9.jpg",
     "index.html": "/index.html",
-    "main.8ef356fb.css.map": "/static/css/main.8ef356fb.css.map",
-    "main.bedff053.js.map": "/static/js/main.bedff053.js.map"
+    "main.2401f579.css.map": "/static/css/main.2401f579.css.map",
+    "main.fa78b68b.js.map": "/static/js/main.fa78b68b.js.map"
   },
   "entrypoints": [
-    "static/css/main.8ef356fb.css",
-    "static/js/main.bedff053.js"
+    "static/css/main.2401f579.css",
+    "static/js/main.fa78b68b.js"
   ]
 }
