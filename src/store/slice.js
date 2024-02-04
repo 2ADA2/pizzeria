@@ -11,6 +11,7 @@ export const manageSlice = createSlice({
     reducers: {
         writeOffMoney:(state, action) => {
             state.balance = state.balance - action.payload.value;
+            if (state.balance < 0) state.balance = 0;
             if (action.payload.order) state.inCart = [];
         },
         addMoney:(state, action) => {
