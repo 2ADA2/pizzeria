@@ -205,12 +205,19 @@ main{
     width:100%;
     height: 700px;
 }
+.popular{
+    .order-container{
+        min-width:35vw;
 
+
+    }
+
+}
 .order-container{
     cursor: pointer;
-    min-width:450px;
     max-width: 450px;
-    height:250px;
+    height:20vw;
+    min-height: 170px;
     background-color: #dbdbdb;
     padding: 10px 0;
     margin:10px;
@@ -264,14 +271,15 @@ main{
         min-width: 300px;
         text-align: center;
         position: absolute;
-        margin-top: 60px;
+        margin-top: 6vw;
         color:white;
+        font-size: 2vw;
         text-shadow: 1px 1px 2px #000;
     }
 
     & .order-price {
         color:#424242;
-        font-size: 30px;
+        font-size: 3vw;
         font-family: Roboto;
         
     }
@@ -338,8 +346,10 @@ main{
         margin: 50px 0;
 
         & .set-page{
-            height: 60px;
-            width: 60px;
+            height: 10vw;
+            width: 10vw;
+            max-height: 70px;
+            max-width: 70px;
             margin-right: 10px;
             background-color: #6b6877;
             color: white;
@@ -488,7 +498,6 @@ footer {
         align-items: center;
         border-radius: 30px;
         padding: 10px;
-        min-width:450px;
         
     }
 
@@ -599,7 +608,7 @@ footer {
 
 }
 
-.balance-control {
+.balance-control-page {
     display: flex;
     font-size:42px;
     width:90%;
@@ -624,6 +633,7 @@ footer {
             width:30%;
             cursor: pointer;
             font-family: Rubik;
+            font-size: 1.5vw;
         }
     }
 }
@@ -705,14 +715,17 @@ footer {
             height: 100%;
             font-size: 4vw;
             text-align: center;
+            display: flex;
+            align-items:center;
+            justify-content: center;
         }
 
         & .cross{
             width:10%;
-            height: 60px;
+            height: 100%;
             line-height: 60px;
             color:#353535;
-            font-size: 60px;
+            font-size: 6vw;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -723,7 +736,8 @@ footer {
 
      & .order{
         max-width:100%;
-        height:400px;
+        height:35vw;
+        min-height: 300px;
         display: flex;
         gap:40px;
         padding: 10px $marginBase;
@@ -731,8 +745,7 @@ footer {
         color: black;  
 
         & img{
-            width:40%;
-            height: 100%;
+            width:50%;
             object-fit: cover;
         }         
         
@@ -744,7 +757,7 @@ footer {
             gap:30px;
 
             & .order-description{
-                font-size: 20px;
+                font-size: 2vw;
                 min-height:100px;
                 &::first-letter{
                     text-transform: uppercase;
@@ -763,7 +776,8 @@ footer {
 
             * .order-price{
                 max-width:30%;
-                width:30%;
+                width:50%;
+                font-size: 6vw;
             }
 
             & .counter{
@@ -907,6 +921,38 @@ footer {
             font-size: 16px;
         }
     }
+
+    .total{
+        font-size: 3.5vw;
+        height: 10vw;
+        right: 30vw;
+        min-width: 70px;
+        min-height: 50px;
+    }
+
+    .container {
+        & h3{
+            font-size: 3.5vw;
+        }
+        & p{
+            font-size: 2vw;
+        }
+    }
+    .orders{
+        height: 70vw;
+        min-height: 400px;
+
+        & .orders-container{
+            height:100%;
+
+            & .orders-container-container{
+
+                & .order-container{
+                     min-width: 200px;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 700px) {
@@ -940,6 +986,20 @@ footer {
         }
     }
 
+    .balance-control-page{
+        flex-direction: column-reverse;
+        gap: 10vw;
+        align-items: center;
+
+        & div{
+            width: 100%;
+        }
+
+        & .balance{
+            font-size: 6vw;
+        }
+    }
+
     .orderPage {
         gap: 10px;
         margin-bottom: 40px;
@@ -960,42 +1020,19 @@ footer {
         & .order-header {
             display: flex;
             width: 100%;
-            height: 100px;
-
-            & .order-name {
-                width: 100%;
-                height: 100%;
-                font-size: 4vw;
-                text-align: center;
-            }
-
-            & .cross {
-                width: 10%;
-                height: 60px;
-                line-height: 60px;
-                color: #353535;
-                font-size: 60px;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                user-select: none;
-            }
+            height: 20%;
         }
 
         & .order {
-            max-width: 100%;
-            height: 400px;
-            display: flex;
-            gap: 40px;
-            padding: 10px $marginBase;
-            background-color: rgba(255, 255, 255, 0.514);
+            height: 200px;
+            min-height: 200px;
+            gap: 10px;
+            padding: 5px $marginBase;
             color: black;
 
             & img {
-                width: 40%;
-                height: 100%;
-                object-fit: cover;
+                width: 60%;
+                height: 70%;
             }
 
             & .order-info {
@@ -1003,51 +1040,50 @@ footer {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                gap: 30px;
+                gap: 10px;
 
                 & .order-description {
                     font-size: 1.5vw;
-                    min-height: 100px;
-
-                    &::first-letter {
-                        text-transform: uppercase;
-                    }
+                    height:30%;
+                    min-height: 0;
                 }
 
                 & .balance-control {
-                    height: 40%;
+                    width: 100%;
+                    min-width: 0;
                     display: flex;
-                    align-items: flex-end;
                     justify-content: space-between;
+                    align-items: flex-end;
                     padding-bottom: 5%;
-                    font-family: Roboto;
                     margin: 0;
                 }
 
                 * .order-price {
                     max-width: 30%;
-                    width: 30%;
+                    width: 40%;
+                    max-width: none;
+                    display: flex;
+                    justify-content: flex-end;
                 }
 
                 & .counter {
                     display: flex;
-                    min-width: 200px;
                     max-width: 200px;
-                    width: 200px;
+                    min-width: 0;
+                    width:100px;
+                    height: 100%;
+                    align-items: flex-end;
 
                     & input {
-                        width: 70px;
-                        text-align: center;
-                        height: 50px;
-                        border: none;
-                        border-left: 1px solid #000;
-                        border-right: 1px solid #000;
+                        width: 40px;
+                        height: 30px;
+                        font-size: 20px;
                     }
 
                     & button {
-                        min-width: 50px;
-                        width: 50px;
-                        height: 50px;
+                        min-width: 20px;
+                        width: 30px;
+                        height: 30px;
                         border: none;
                     }
                 }
@@ -1097,5 +1133,17 @@ footer {
             font-size: 10px;
         }
     }
+    .orders{
+        & .pages {
+            & .set-page{
+            border-radius: 3vw;
+            min-width: 30px;
+            min-height: 30px;
+            font-size: 4vw;
+            }
+        }        
+    }
+
+
     
 }

@@ -38,7 +38,7 @@ export const Balance = () => {
     }
 
     return (
-        <div className = 'balance-control'>
+        <div className= 'balance-control-page'>
             <div>
                 <input 
                 className='balance-field' 
