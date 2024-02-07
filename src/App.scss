@@ -32,14 +32,14 @@ header{
     background-color: rgba(0, 0, 0, 0.3);
 
     & h1 {
-        min-width:350px;
+        display: flex;
         & a{
             color: white;
             text-decoration: none;
             font-size: 10vw;
             cursor: pointer;
             transition-duration: 100ms;
-            line-height: 120px;
+            vertical-align: bottom;
             
             &:hover{
                 text-shadow: 2px 2px 2px  rgb(255, 251, 0);
@@ -426,6 +426,7 @@ main{
     position: fixed;
     background: 0px bottom / cover no-repeat url("./img/pizza-time-tasty-homemade-traditional-pizza-italian-recipe.jpg");
 }
+
 footer {
     display: flex;
     align-items: center;
@@ -743,7 +744,7 @@ footer {
             gap:30px;
 
             & .order-description{
-                font-size: 1.5vw;
+                font-size: 20px;
                 min-height:100px;
                 &::first-letter{
                     text-transform: uppercase;
@@ -850,9 +851,15 @@ footer {
     }
 
     & .user-info{
+        width: 50%;
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        & h2{
+            font-family: Roboto;
+            letter-spacing: 1px;
+        }
 
         & img{
             width: 300px;
@@ -863,4 +870,232 @@ footer {
     }
 }
 
+@media (max-width: 1100px) {
+    .profile-container{
 
+    & .input-container {
+        font-size: 28px;
+
+        & input {
+            height: 30px;
+            font-size: 26px;
+            padding-left: 10px;
+        }
+    }
+
+        & .user-info{
+            & h2{
+                font-size: 26px;
+            }
+
+            & img{
+                height: 200px;
+                width: 200px;
+            }
+        }
+    }
+
+    footer {
+        & .adresses {
+            font-size: 10px;
+            &>h2 {
+                font-size: 20px;
+            }
+        }
+        & .info {
+            height: 50px;
+            font-size: 16px;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        height: 100px;
+        & h1 a{
+            font-size: 8vw;
+        }
+        & .manage{
+            
+            & h3, h4{
+                font-size: 16px;
+            }
+
+            & img {
+                width: 50px;
+                height: 50px;
+            }
+
+            & .user-menu {
+                width: 100px;
+                top: 100px;
+                border-radius: 0 0 5px 5px;
+                font-size: 8px;
+
+                & li a{
+                    width:100%;
+                    padding: 3px 0;
+                }
+            }
+        }
+    }
+
+    .orderPage {
+        gap: 10px;
+        margin-bottom: 40px;
+
+        & .button-container {
+            max-height: 60px;
+            height: 60px;
+            width: 50%;
+        }
+
+        & .toOrder {
+            width: 200px;
+            height: 50px;
+            border-radius: 10px;
+            font-size: 24px;
+        }
+
+        & .order-header {
+            display: flex;
+            width: 100%;
+            height: 100px;
+
+            & .order-name {
+                width: 100%;
+                height: 100%;
+                font-size: 4vw;
+                text-align: center;
+            }
+
+            & .cross {
+                width: 10%;
+                height: 60px;
+                line-height: 60px;
+                color: #353535;
+                font-size: 60px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                user-select: none;
+            }
+        }
+
+        & .order {
+            max-width: 100%;
+            height: 400px;
+            display: flex;
+            gap: 40px;
+            padding: 10px $marginBase;
+            background-color: rgba(255, 255, 255, 0.514);
+            color: black;
+
+            & img {
+                width: 40%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            & .order-info {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 30px;
+
+                & .order-description {
+                    font-size: 1.5vw;
+                    min-height: 100px;
+
+                    &::first-letter {
+                        text-transform: uppercase;
+                    }
+                }
+
+                & .balance-control {
+                    height: 40%;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: space-between;
+                    padding-bottom: 5%;
+                    font-family: Roboto;
+                    margin: 0;
+                }
+
+                * .order-price {
+                    max-width: 30%;
+                    width: 30%;
+                }
+
+                & .counter {
+                    display: flex;
+                    min-width: 200px;
+                    max-width: 200px;
+                    width: 200px;
+
+                    & input {
+                        width: 70px;
+                        text-align: center;
+                        height: 50px;
+                        border: none;
+                        border-left: 1px solid #000;
+                        border-right: 1px solid #000;
+                    }
+
+                    & button {
+                        min-width: 50px;
+                        width: 50px;
+                        height: 50px;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .profile-container {
+        flex-direction: column-reverse;
+        gap: 50px;
+
+        & .control-panel{
+            width: 100%;
+
+                & input {
+                    width: 50%;
+                    height: 25px;
+                    font-size: 20px;
+                    padding-left: 15px;
+                }     
+        }
+
+
+    
+
+
+        & .user-info {
+            & h2 {
+                font-size: 20px;
+            }
+
+            & img {
+                height: 150px;
+                width: 150px;
+            }
+        }
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        * .adresses{
+            font-size: 5px;
+        }
+        & .info{
+            font-size: 10px;
+        }
+    }
+    
+}

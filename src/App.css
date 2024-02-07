@@ -24,7 +24,7 @@ header {
   padding: 0 5%;
   background-color: rgba(0, 0, 0, 0.3); }
   header h1 {
-    min-width: 350px;
+    display: flex;
     margin-bottom: 30px; }
     header h1 a {
       color: white;
@@ -32,7 +32,7 @@ header {
       font-size: 10vw;
       cursor: pointer;
       transition-duration: 100ms;
-      line-height: 120px; }
+      vertical-align: bottom; }
       header h1 a:hover {
         text-shadow: 2px 2px 2px #fffb00; }
   header .avatar {
@@ -551,7 +551,7 @@ footer {
       justify-content: space-between;
       gap: 30px; }
       .orderPage .order .order-info .order-description {
-        font-size: 1.5vw;
+        font-size: 20px;
         min-height: 100px; }
         .orderPage .order .order-info .order-description::first-letter {
           text-transform: uppercase; }
@@ -630,11 +630,162 @@ footer {
   .profile-container .input-name {
     height: 30%; }
   .profile-container .user-info {
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center; }
+    .profile-container .user-info h2 {
+      font-family: Roboto;
+      letter-spacing: 1px; }
     .profile-container .user-info img {
       width: 300px;
       height: 300px;
       object-fit: cover;
       border-radius: 50px; }
+
+@media (max-width: 1100px) {
+  .profile-container .input-container {
+    font-size: 28px; }
+    .profile-container .input-container input {
+      height: 30px;
+      font-size: 26px;
+      padding-left: 10px; }
+  .profile-container .user-info h2 {
+    font-size: 26px; }
+  .profile-container .user-info img {
+    height: 200px;
+    width: 200px; }
+
+  footer .adresses {
+    font-size: 10px; }
+    footer .adresses > h2 {
+      font-size: 20px; }
+  footer .info {
+    height: 50px;
+    font-size: 16px; } }
+@media (max-width: 700px) {
+  header {
+    height: 100px; }
+    header h1 a {
+      font-size: 8vw; }
+    header .manage h3, header .manage h4 {
+      font-size: 16px; }
+    header .manage img {
+      width: 50px;
+      height: 50px; }
+    header .manage .user-menu {
+      width: 100px;
+      top: 100px;
+      border-radius: 0 0 5px 5px;
+      font-size: 8px; }
+      header .manage .user-menu li a {
+        width: 100%;
+        padding: 3px 0; }
+
+  .orderPage {
+    gap: 10px;
+    margin-bottom: 40px; }
+    .orderPage .button-container {
+      max-height: 60px;
+      height: 60px;
+      width: 50%; }
+    .orderPage .toOrder {
+      width: 200px;
+      height: 50px;
+      border-radius: 10px;
+      font-size: 24px; }
+    .orderPage .order-header {
+      display: flex;
+      width: 100%;
+      height: 100px; }
+      .orderPage .order-header .order-name {
+        width: 100%;
+        height: 100%;
+        font-size: 4vw;
+        text-align: center; }
+      .orderPage .order-header .cross {
+        width: 10%;
+        height: 60px;
+        line-height: 60px;
+        color: #353535;
+        font-size: 60px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none; }
+    .orderPage .order {
+      max-width: 100%;
+      height: 400px;
+      display: flex;
+      gap: 40px;
+      padding: 10px 5%;
+      background-color: rgba(255, 255, 255, 0.514);
+      color: black; }
+      .orderPage .order img {
+        width: 40%;
+        height: 100%;
+        object-fit: cover; }
+      .orderPage .order .order-info {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 30px; }
+        .orderPage .order .order-info .order-description {
+          font-size: 1.5vw;
+          min-height: 100px; }
+          .orderPage .order .order-info .order-description::first-letter {
+            text-transform: uppercase; }
+        .orderPage .order .order-info .balance-control {
+          height: 40%;
+          display: flex;
+          align-items: flex-end;
+          justify-content: space-between;
+          padding-bottom: 5%;
+          font-family: Roboto;
+          margin: 0; }
+        .orderPage .order .order-info * .order-price {
+          max-width: 30%;
+          width: 30%; }
+        .orderPage .order .order-info .counter {
+          display: flex;
+          min-width: 200px;
+          max-width: 200px;
+          width: 200px; }
+          .orderPage .order .order-info .counter input {
+            width: 70px;
+            text-align: center;
+            height: 50px;
+            border: none;
+            border-left: 1px solid #000;
+            border-right: 1px solid #000; }
+          .orderPage .order .order-info .counter button {
+            min-width: 50px;
+            width: 50px;
+            height: 50px;
+            border: none; }
+
+  .profile-container {
+    flex-direction: column-reverse;
+    gap: 50px; }
+    .profile-container .control-panel {
+      width: 100%; }
+      .profile-container .control-panel input {
+        width: 50%;
+        height: 25px;
+        font-size: 20px;
+        padding-left: 15px; }
+    .profile-container .user-info h2 {
+      font-size: 20px; }
+    .profile-container .user-info img {
+      height: 150px;
+      width: 150px; }
+
+  footer {
+    flex-direction: column;
+    text-align: center; }
+    footer * .adresses {
+      font-size: 5px; }
+    footer .info {
+      font-size: 10px; } }

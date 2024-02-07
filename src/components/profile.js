@@ -9,8 +9,9 @@ export const Profile = () => {
     const dispatch = useDispatch();
 
     function handleInput(value, set, limit = false){
-        if((value.length > 15) || (value.length < 3)) {
-            alert('Ошибка! Ник должен содержать меньше 15 и больше 2 символов!');
+        if(((value.length > 15) || (value.length < 3)) & limit) {
+            alert(value);
+            setUserName(state.userName);
             return;
         }
         dispatch(set({value:value}))
@@ -29,7 +30,6 @@ export const Profile = () => {
                     onKeyDown={(e) => {
                         if (e.code == 'Enter'){
                             handleInput(userName, setName, true);
-                            e.target.blur();
                         }
                     }}
                     ></input>                    

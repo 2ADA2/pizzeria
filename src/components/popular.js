@@ -11,31 +11,32 @@ function PopularSection(){
     })); 
     const container = useRef();
     const popularRef = useRef();
+    const [containerWidth, setContainerWidth] = useState(0);
 
     useEffect(() => {
-        container.current.style.marginLeft = '0px';
-        
+        container.current.style.marginLeft = '0px'; 
     }, []);
     
-
-    
     const arrowClick = (isLeft) => {
-        const width = 380 * orders.length;
-        const popularWidth = popularRef.current.getBoundingClientRect().width;
-
-        if (isLeft && (container.current.style.marginLeft < '0px')) {
-            container.current.style.marginLeft = (parseInt(container.current.style.marginLeft) + popularWidth * 0.7) + 'px';
-        } else if (!isLeft && parseInt(container.current.style.marginLeft) > (-width + popularWidth) ) {
-            container.current.style.marginLeft = (parseInt(container.current.style.marginLeft) - popularWidth * 0.7) + 'px';
+        setContainerWidth(popularRef.current.clientWidth);
+        const orderWidth = document.querySelector('.order-container').offsetWidth + 20;
+        const width = -orderWidth * orders.length;
+        let margin = parseInt(container.current.style.marginLeft);
+        if(isLeft && (margin <= 0)){
+            if (margin + containerWidth * 0.7 <= 0) {
+                
+                margin = ((margin + containerWidth* 0.7));
+            } else{
+                margin = 0;
+            }  
+        } else {
+                margin = ((margin - (containerWidth * 0.7)) );
+            if (margin <= (width + containerWidth)){
+                console.log(1);
+                margin = width + containerWidth;
+            }
         }
-
-        console.log(parseInt(container.current.style.marginLeft) < (-width + popularWidth));
-        if (container.current.style.marginLeft >= '0px'){
-            container.current.style.marginLeft = '0px'
-        } else if (parseInt(container.current.style.marginLeft) < (-width + popularWidth)){
-            container.current.style.marginLeft = -width + popularWidth + 'px';
-            console.log(1);
-        }
+        container.current.style.marginLeft = margin + 'px'
     }
 
     return(
