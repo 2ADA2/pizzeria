@@ -12,7 +12,6 @@ function CreateOrder(order){
     } else {
         description = 'ingredients: ' + description.slice(' ').join(', ');
     }
-
     const [modal, setModal] = useState(0);
 
     return (
@@ -26,7 +25,7 @@ function CreateOrder(order){
                 </div>
                 <h3 className = 'order-name'>{order.name}</h3>
                 <div className = 'order-info'>
-                    <p className = 'order-description'>{Array.from(description) || 1}</p>
+                    <p className = 'order-description' >{Array.from(description) || 1}</p>
                     <h4 className = 'order-price'>{order.price}$</h4>
                 </div>
                  
