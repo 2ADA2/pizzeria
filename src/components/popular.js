@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react';
+import {useState, useRef, useEffect} from 'react';
 import CreateOrder from './order';
 import orders from '../orders.json' 
 import CreateOrders from './orders';

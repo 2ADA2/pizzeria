@@ -1,4 +1,3 @@
-import React from 'react';
 import PopularSection from './popular';
 import CreateOrders from './orders';
 

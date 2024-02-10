@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import {useState, useEffect} from "react";
 import {setCart} from "../store/slice";
 import { useDispatch } from "react-redux";
 

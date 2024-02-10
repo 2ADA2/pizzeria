@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addMoney, writeOffMoney, roundBalance } from '../store/slice';
 import animateBalance from '../components/animation';

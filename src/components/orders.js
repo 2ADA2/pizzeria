@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import { useState, useEffect} from 'react';
 import { useResize } from './useResize';
 import allOrders from '../orders.json';
 import CreateOrder from './order';

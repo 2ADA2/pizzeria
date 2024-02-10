@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.2401f579.css",
-    "main.js": "/static/js/main.fa78b68b.js",
+    "main.css": "/static/css/main.860137ac.css",
+    "main.js": "/static/js/main.abf0e485.js",
     "static/media/pizza-time-tasty-homemade-traditional-pizza-italian-recipe.jpg": "/static/media/pizza-time-tasty-homemade-traditional-pizza-italian-recipe.6597f0061e3b44283c8c.jpg",
     "static/media/mixed-ingredient-pizza-with-isolated-products-stone.jpg": "/static/media/mixed-ingredient-pizza-with-isolated-products-stone.d4b83c8a0e9c369c3ba9.jpg",
     "index.html": "/index.html",
-    "main.2401f579.css.map": "/static/css/main.2401f579.css.map",
-    "main.fa78b68b.js.map": "/static/js/main.fa78b68b.js.map"
+    "main.860137ac.css.map": "/static/css/main.860137ac.css.map",
+    "main.abf0e485.js.map": "/static/js/main.abf0e485.js.map"
   },
   "entrypoints": [
-    "static/css/main.2401f579.css",
-    "static/js/main.fa78b68b.js"
+    "static/css/main.860137ac.css",
+    "static/js/main.abf0e485.js"
   ]
 }

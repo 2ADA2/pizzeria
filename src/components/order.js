@@ -1,5 +1,8 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import { CreateModal } from './modal';
+import { ImageLoad } from './imageLoad';
+
+const placeholder = 'https://static.vecteezy.com/system/resources/thumbnails/002/165/527/small/line-icon-for-pizza-vector.jpg'
 
 function CreateOrder(order){
     let description = (order.description || order.ingredients);
@@ -21,7 +24,7 @@ function CreateOrder(order){
             onClick = {() => setModal(1)}
             >
                 <div className = 'image-container'>
-                    <img src = {order.url}></img>
+                    <ImageLoad src={order.url} placeholder = {placeholder} />
                 </div>
                 <h3 className = 'order-name'>{order.name}</h3>
                 <div className = 'order-info'>
