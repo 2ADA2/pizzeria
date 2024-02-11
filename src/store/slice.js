@@ -36,8 +36,7 @@ export const manageSlice = createSlice({
         setUrl: (state, action) => {
             state.avatarLink = action.payload.value;
         },
-        order: (state,action ) => { 
-            console.log(1);
+        order: (state,action ) => {
             state.inCart = [];
             state.balance = state.balance - action.payload.price;
         }

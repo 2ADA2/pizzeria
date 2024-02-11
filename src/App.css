@@ -11,7 +11,12 @@ a {
 body {
   background: black;
   color: white;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  min-height: 100vh; }
+
+#root {
+  height: 100%;
+  min-height: 100vh; }
 
 img {
   border-radius: 10px; }
@@ -30,7 +35,7 @@ header {
     header h1 a {
       color: white;
       text-decoration: none;
-      font-size: 10vw;
+      font-size: 8vw;
       cursor: pointer;
       transition-duration: 100ms;
       vertical-align: bottom; }
@@ -887,3 +892,6 @@ footer {
       font-size: 5px; }
     footer .info {
       font-size: 10px; } }
+@media (min-width: 1500px) {
+  header h1 a {
+    font-size: 150px; } }

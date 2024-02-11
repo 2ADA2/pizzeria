@@ -1,6 +1,6 @@
 import './App.css';
 import { useSelector } from 'react-redux';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import {Main} from './components/main';
 import {Footer} from './components/footer';

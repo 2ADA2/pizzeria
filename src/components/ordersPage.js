@@ -14,7 +14,6 @@ function findOrder(name){
         });
 
     } 
-    
 
     let description = (order.description || order.ingredients);
     if (order.description) {
@@ -55,7 +54,6 @@ export const OrdersPage = () => {
 
     function toOrder(){
         if (balance > sum) {
-            console.log(1);
             dispatch(order({price:sum}));
             total = {}
         }
@@ -75,7 +73,7 @@ export const OrdersPage = () => {
         <div className = 'orderPage'>
         {
             orders = orders.map(name => {
-            const order = findOrder(name);
+                const order = findOrder(name);
 
                 return <CreateOrder order={order} setTotal = {(name, value) => setTotal(name, value)}/>
         })   
